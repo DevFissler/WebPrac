@@ -1,88 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>실습 7</title>
-</head>
-<body>
-<form method="post" action="result.jsp">
-    <table border="0" cellspacing="2">
-        <tr>
-            <td>신규 / 기존 회원</td>
-            <td colspan="2">
-                <input type="checkbox" name="member" value="신규">  
-                 신규 회원
-                <input type="checkbox" name="member" value="복귀">
-                 기존 회원
-            </td>
-        </tr>
-        <tr>
-            <td>
-                아이디
-            </td>
-            <td colspan="2">
-                <input type="text" id="UserID" name="id" style="width:300px">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                비밀번호
-            </td>
-            <td colspan="2">
-                <input type="password" id="UserPW" name="pw" style="width:300px">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                비밀번호 확인
-            </td>
-            <td colspan="2">
-                <form><input type="password" id="UserPWCheck" name="pwCheck" style="width:300px">
-            </td>
-        </tr>
-        <tr>
-            <td >
-                이름
-            </td>
-            <td colspan="2">
-                <input type="text" id="UserName" name="name" style="width:300px">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                휴대전화번호
-            </td>
-            <td width="60px">
-                <select name="provider" id="providers">
-                    <option value="SKT">SKT</option>
-                    <option value="KT">KT</option>
-                    <option value="LGU+">LGU+</option>
-                    <option value="알뜰폰">알뜰폰</option>
-                    </select>
-            </td>
-            <td width="300px">
-                <select name="firstNum" id="fNum">
-                    <option value="010">010</option>
-                    <option value="017">017</option>
-                    <option value="019">019</option>
-                </select>
-                <input type="number" id="middleNum" name="mNum" style="width:25%"> -  <input type="number" id="lastNum" name="lNum" style="width:25%"></form>
-            </td>
-        </tr>
-        <tr>
-            <td>이메일</td>
-            <td colspan="2"><input type="email" id="emali" name="email" value="" style="width:300px"></td>
-        </tr>
-        <tr>
-            <td colspan=3><br></td>
-        </tr>
-        <tr>
-            <td align="right" colspan="2"><input type="submit" value="제출"></td>
-            <td align="left"><input type="reset" value="초기화"></td>
-        </tr>
-    </table>
-</form>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>실습 7</title>
+    </head>
+    <body>
+        <form method="post" action="result.jsp">
+            <table border="0" cellspacing="2">
+                <tr>
+                    <td>신규 / 기존 회원</td>
+                    <td colspan="2">
+                        <input type="checkbox" name="member" value="신규">  
+                        신규 회원
+                        <input type="checkbox" name="member" value="복귀">
+                        기존 회원
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        아이디
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="UserID" name="id" style="width:300px" placeholder="아이디">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        비밀번호
+                    </td>
+                    <td colspan="2">
+                        <input type="password" id="UserPW" name="pw" style="width:300px" placeholder="비밀번호">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        비밀번호 확인
+                    </td>
+                    <td colspan="2">
+                        <form><input type="password" id="UserPWCheck" name="pwCheck" style="width:300px" placeholder="비밀번호 확인">
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        이름
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="UserName" name="name" style="width:300px" placeholder="이름">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        휴대전화번호
+                    </td>
+                    <td width="60px">
+                        <select name="provider" id="providers">
+                            <option value="SKT">SKT</option>
+                            <option value="KT">KT</option>
+                            <option value="LGU+">LGU+</option>
+                            <option value="알뜰폰">알뜰폰</option>
+                            </select>
+                    </td>
+                    <td width="300px">
+                        <select name="firstNum" id="fNum">
+                            <option value="010">010</option>
+                            <option value="017">017</option>
+                            <option value="019">019</option>
+                        </select>
+                        <input type="number" id="middleNum" name="mNum" style="width:25%"> -  <input type="number" id="lastNum" name="lNum" style="width:25%" ></form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>이메일</td>
+                    <td colspan="2"><input type="email" id="emali" name="email" value="" style="width:300px" placeholder="이메일"></td>
+                </tr>
+                <tr>
+                    <td colspan=3><br></td>
+                </tr>
+                <tr>
+                    <td align="right"><input type="submit" value="제출"></td>
+                    <td align="center"><a href=index.html><input type="button" value="홈으로"></a></td>
+                    <td align="left"><input type="reset" value="초기화"></td>
+                </tr>
+            </table>
+        </form>
+    </body>
 </html>
