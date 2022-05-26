@@ -31,7 +31,6 @@
             out.print("회원유형: "+arr[i]+"<br><br>");
         }
         out.print("아이디 : "+ id+"<br><br>");
-        out.print("비밀번호 : "+ pw+"<br><br>");
         out.print("이름 : "+ name+"<br><br>");
         out.print("휴대전화번호 : ("+ provider + ") "+firstNum+" - "+middleNum+" - "+lastNum+"<br><br>");
         out.print("이메일 : "+ email);
