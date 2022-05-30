@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
+        
         div {
             /* margin은 사방에 다 들어감 
             margin:10px;*/
@@ -22,6 +22,7 @@
             border-style: dotted;
             /* 외곽선 색깔 */
             border-color: red;
+            border-width: 5px;
         }
 
         .border-dashed {
@@ -29,6 +30,8 @@
             border-style: dashed;
             /* 선 모서리 둥글게 */
             border-radius: 10px;
+            /* 하나 적으면 상하 좌우 다 적용 */
+            margin: 10px;
         }
 
         .border-solid {
@@ -36,11 +39,16 @@
             border-style: solid;
             /* 선 두께 */
             border-width: 5px;
+            /* 3개 적으면 위 좌&우 아래 로 적용 */
+            margin: 20px 20px 10px;
         }
 
         .border-double {
             /* double = 이중 실선 */
             border-style: double;
+            /* 2개 적으면 위&아래 좌&우로 적용 */
+            margin: 20px 20px;
+            border-width: 5px;
         }
 
         div {
