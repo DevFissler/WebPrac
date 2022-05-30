@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+     /*    span은 기본적으로 내용만큼만 자리 차지
+        span {
+             이러면 div와 같아짐 
+            display: block;
+        }
+        /* div는 한 줄을 다 차지 */
+        /*div {
+             이러면 span과 같아짐 
+            display: inline;
+        }*/
+
+        div.div1 {
+            /* inline-block 은 크기 설정 가능(설정 안하면 내용 만큼만 크기 잡힘) */
+            /* margin 바깥쪽 여백 */
+            margin: 50px;
+            /* padding 안쪽 여백 */
+            padding: 50px;
+            background-color:yellow;
+            position:relative;
+            display: inline-block;
+            width:100px;
+            height: 100px;
+        }
+
+        div.div2 {
+            /* inline 은 width height 지정 불가 */
+            display: inline;
+            
+            /* relative는 원래 있어야 되는 위치에서 이동 시킴
+            position: relative;
+            left: 30px;
+            top:30px;
+            background-color: pink;
+            */
+            
+            /* absolute는 가장 가까운 position 속성이 static이 아닌 태그 기준으로 배치(없으면 화면 기준)
+            position: absolute;
+            left:30px;
+            top:30px;
+            background-color: pink;
+            */
+
+            /* 고정 (창 움직여도 위치 고정)
+            position:fixed;
+            */
+
+            /*  
+            position:static
+            */
+
+            position:sticky;
+        }
+
+        span {
+            /* block은 크기 설정 가능(block은 한줄에 하나만) */
+            display: block;
+            width:100px;
+            height: 100px;
+        }
+    </style>
+    <div class="div1">div1</div>
+    <!-- div.div1으로 빠르게 생성가능 -->
+    <div class="div1">div1</div>
+    <!-- 사실 .div2만 해도 div 생성가능 -->
+    
+    <div>div<div class="div2">div2</div></div>
+    <div>div</div>
+    <span>span</span>
+    <span>span</span>
+    <h1>h1</h1>
+    <h1>h1</h1>
+    <!-- header는 div와 같다 -->
+    <header>header</header>
+    <!-- footer는 div와 같다 -->
+    <footer>footer</footer>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div {
+            /* margin은 사방에 다 들어감 
+            margin:10px;*/
+            /* margin top으로 위에만 margin줄 수 있음 */
+            margin-top:10px;
+            width:300px;
+            padding: 10px;
+
+        }
+
+        .border-dotted {
+            /* dotted = 점선 */
+            border-style: dotted;
+            /* 외곽선 색깔 */
+            border-color: red;
+        }
+
+        .border-dashed {
+            /* dashed = 절취선 */
+            border-style: dashed;
+            /* 선 모서리 둥글게 */
+            border-radius: 10px;
+        }
+
+        .border-solid {
+            /* solid = 실선 */
+            border-style: solid;
+            /* 선 두께 */
+            border-width: 5px;
+        }
+
+        .border-double {
+            /* double = 이중 실선 */
+            border-style: double;
+        }
+
+        div {
+            /* 이런 식으로 간단히 지정가능 */
+            border: 1px black dashed;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="border-dotted">div1</div>
+    <div class="border-dashed">div2</div>
+    <div class="border-solid">div3</div>
+    <div class="border-double">div4</div>
+    <div>div5</div>
+    <div>div6</div>
+</body>
+</html>
