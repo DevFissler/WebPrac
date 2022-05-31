@@ -9,15 +9,13 @@
 <body>
   <style>
     .container{
-      width: 100%;
-      
       position: relative;
 
     }
     .header{
-        background-color: rgb(36,37,52);
-        height: 40px;
-        border: 1px;
+      background-color: rgb(36,37,52);
+      height: 40px;
+      border: 1px;
     }
     .headerLeft{
       width:80%;
@@ -31,10 +29,8 @@
       position: absolute;
       display: inline-block;
       width: 20%;
-      float: right;
       line-height: 35px;
       color: rgb(139,142,147);
-
     }
     td{
       font-size: 20px;
@@ -42,48 +38,65 @@
     }
     .background{
       position: absolute;
-      width: 100%;
+      width: 100vw;
+      height: 100vh;
       top: 100%;
       z-index: -1;
-    background-size: cover;
+      background-size: cover;
     }
 
-    .background::before{
-        content: "";
-        opacity:0.8;
-        position: absolute;
-        top:0px;
-        bottom:0px;
-        left:0px;
-        right:0px;
-
+    .background img {
+        filter:opacity(80%);
     }
+
     .main{
-      position: absolute;
+      position: fixed;
       left: 38%;
-      z-index:10;
+      z-index:3;
       top: 40%;
       color: white;
       text-align: left;
       font-size: 25px;
       
     }
+    
+    body {
+      margin:0px;
+    }
+    .main p {
+        filter: opacity(100%);
+        width: 500px;
+    }
     b{
       color: darksalmon;
     }
     .go{
-      position: absolute;
-      z-index: 15;
+      position: fixed;
+      z-index: 3;
       left: 45%;
       top: 55%;
 
     } 
-    .btn{
+    .button{
       background-color: rgba(0,0,0,0);
       padding: 8px;
       border: 1px white solid;
       color: white;
     }
+
+    a:visited{
+        color: white;
+    }
+
+    a:link{
+        text-decoration: none;
+    }
+    a:active{
+        text-decoration: none;
+    }
+    
+
+
   </style>
 
   <div class="container">
@@ -94,7 +107,7 @@
      <div class="headerRight">
       <table>
         <tr>
-          <td>Home</td><td>About</td><td>Projects</td><td>Contact</td>
+          <td><a href=positionprac.html>IU</a></td><td><a href=image.html>IU?</a></td><td><a href=display2.html>Borders</a></td><td><a href=divprac.html>FaceBook</a></td>
         </tr>
       </table>
      </div>
@@ -107,10 +120,9 @@
       <p>안녕하세요, 제 이름은 <b>안재형입니다.</b> <br>저는 성장 중인 개발자입니다.</p>
     </div>
     <div class="go">
-      <input type="button" value="View My Work ➤" class="btn">
+      <input type="button" value="View My Work ➤" class="button">
     </div>
    </div>
   </div>
-
 </body>
 </html>

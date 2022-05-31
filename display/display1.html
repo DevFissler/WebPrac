@@ -6,17 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<div>
     <style>
-     /*    span은 기본적으로 내용만큼만 자리 차지
+        /*  span은 기본적으로 내용만큼만 자리 차지
         span {
-             이러면 div와 같아짐 
-            display: block;
-        }
-        /* div는 한 줄을 다 차지 */
-        /*div {
-             이러면 span과 같아짐 
-            display: inline;
+            display: block; block=한줄 다 차지
+        } */
+        
+        /* div는 한 줄을 다 차지 
+        div {
+            display: inline; inline=컨텐츠 만큼만 자리 차지
         }*/
 
         div.div1 {
@@ -32,42 +31,89 @@
             height: 100px;
         }
 
+        span {
+            /* block은 크기 설정 가능(block은 한줄에 하나만) */
+            display: block;
+            width:  100px;
+            height: 100px;
+        }
+
         div.div2 {
             /* inline 은 width height 지정 불가 */
-            display: inline;
-            
+            display: inline;           
             /* relative는 원래 있어야 되는 위치에서 이동 시킴
             position: relative;
             left: 30px;
             top:30px;
             background-color: pink;
-            */
-            
+            */           
             /* absolute는 가장 가까운 position 속성이 static이 아닌 태그 기준으로 배치(없으면 화면 기준)
             position: absolute;
             left:30px;
             top:30px;
             background-color: pink;
             */
-
             /* 고정 (창 움직여도 위치 고정)
             position:fixed;
-            */
-
-            /*  
-            position:static
-            */
-
-            position:sticky;
+            position:static;
+            position:sticky;*/
         }
+        .container{
+      position: relative;
 
-        span {
-            /* block은 크기 설정 가능(block은 한줄에 하나만) */
-            display: block;
-            width:100px;
-            height: 100px;
-        }
+    }
+    .header{
+      background-color: rgb(36,37,52);
+      height: 40px;
+      border: 1px;
+    }
+    .headerLeft{
+      width:80%;
+      font-size: 15px;
+      color: white;
+      line-height: 35px;
+      padding-left: 5px;
+      display: inline-block;
+    }
+    .headerRight{
+      position: absolute;
+      display: inline-block;
+      width: 20%;
+      line-height: 35px;
+      color: rgb(139,142,147);
+    }
+    td{
+      font-size: 20px;
+      padding-right: 25px;
+    }
+    
+    a:visited{
+        color: white;
+    }
+
+    a:link{
+        text-decoration: none;
+    }
+    a:active{
+        text-decoration: none;
+    }
+        
+
+        
     </style>
+    <div class="container">
+        <div class="header">
+            <div class="headerLeft">
+         ★
+            </div>
+            <div class="headerRight">
+         <table>
+           <tr>
+             <td><a href=positionprac.html>IU</a></td><td><a href=image.html>IU?</a></td><td><a href=display2.html>Borders</a></td><td><a href=divprac.html>FaceBook</a></td>
+           </tr>
+         </table>
+        </div>
+      </div>
     <div class="div1">div1</div>
     <!-- div.div1으로 빠르게 생성가능 -->
     <div class="div1">div1</div>
@@ -83,5 +129,6 @@
     <header>header</header>
     <!-- footer는 div와 같다 -->
     <footer>footer</footer>
+    </div>
 </body>
 </html>
