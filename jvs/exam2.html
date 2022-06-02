@@ -26,10 +26,10 @@
     
   </style>
   <script>
-    function firstWhite(){
-      let x = document.getElementById('firstBox');
-      let y = document.getElementById('secondBox');
-      let z = document.getElementById('thirdBox');
+    function firstClick(){
+      let x = document.getElementById('firstButton');
+      let y = document.getElementById('secondButton');
+      let z = document.getElementById('thirdButton');
       x.style.backgroundColor="white";
       x.style.color="black";
       x.style.border="solid";
@@ -38,10 +38,10 @@
       z.style.backgroundColor="gray";
       z.style.color="white";
     }
-    function secondWhite(){
-      let x = document.getElementById('firstBox');
+    function secondClick(){
+      let x = document.getElementById('firstButton');
       let y = document.getElementById('secondBox');
-      let z = document.getElementById('thirdBox');
+      let z = document.getElementById('thirdButton');
       y.style.backgroundColor="white";
       y.style.color="black";
       y.style.border="solid";
@@ -50,10 +50,10 @@
       z.style.backgroundColor="gray";
       z.style.color="white";
     }
-    function thirdWhite(){
-      let x = document.getElementById('firstBox');
-      let y = document.getElementById('secondBox');
-      let z = document.getElementById('thirdBox');
+    function thirdClick(){
+      let x = document.getElementById('firstButton');
+      let y = document.getElementById('secondButton');
+      let z = document.getElementById('thirdButton');
       z.style.backgroundColor="white";
       z.style.color="black";
       z.style.border="solid";
@@ -64,10 +64,10 @@
     }
   </script>
 
-  <div id="button">
-  <div id="firstBox" class="button" onclick="firstWhite()">html</div>
-  <div id="secondBox" class="button" onclick="secondWhite()">css</div>
-  <div id="thirdBox" class="button" onclick="thirdWhite()">javascript</div>
+  <div id="container">
+  <div id="firstButton" class="button" onclick="firstClick()">HTML</div>
+  <div id="secondButton" class="button" onclick="secondClick()">CSS</div>
+  <div id="thirdButton" class="button" onclick="thirdClick()">JAVASCRIPT</div>
   </div>
 </body>
 </html>
