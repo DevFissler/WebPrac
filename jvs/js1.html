@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <script>
+        const Num=10;
+        let i=10;
+        //타입 변환은 막을 수 없다...주의할 것
+
+        let name='안재형';
+        let age = 30;
+        let result = `${name}은 ${age} 살입니다`;
+        document.write(result);
+
+        let items = [1,2,3,4];
+
+        for (var index=0;index<items.length;index++){
+            document.write(items[index]+",");
+        }
+
+        let person = {
+            name:'안재형',
+            age:30
+        };
+
+        console.log(person);
+    </script>
+    
+    <input type="button" value="인사" onclick="greeting()">
+    <!-- var 보단 let을 사용할 것 (재 선언이 안됨) -->
+</body>
+</html>

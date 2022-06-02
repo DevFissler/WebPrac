@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <script>
+        function check() {
+        let name = document.getElementById("name").value;
+
+        if (name.length == 0){
+            alert("이름을 입력해주세요");
+        } 
+
+        if (name.length !=0){
+            alert(name+"님 안녕하세요!");
+        }
+    }
+    </script>
+    <style>
+        div {
+            padding-left:5px;
+        }
+
+        span {
+            margin-left:5px;
+            padding-left:5px;
+        }
+
+        div.button {
+            margin-top:5px;
+            padding-left: 190px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <form>
+        <div><span>이름</span><span><input type="text" id="name" value=""></div></span></div>
+        <div class="button"><input type="button" id="button" value="클릭" onclick="check()"></div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <script>
+        function check() {
+            let num = document.getElementById("num").value;
+
+            if (num.length == 0){
+                alert("값을 입력해주세요!");
+            } 
+
+            if (isNaN(num)){
+                alert("숫자를 입력해주세요!");
+            }
+
+            if (num>0 && num<=100){
+                for (i=1;i<101;i++){
+                console.log(i);
+                }
+                alert("완료되었습니다")
+            }
+
+            if (num<0 || num>100){
+                alert("1이상 100이하의 수를 입력해주세요!")
+            }
+        }
+    </script>
+    <style>
+        div {
+            padding-left:5px;
+        }
+
+        span {
+            margin-left:5px;
+            padding-left:5px;
+        }
+
+        div.button {
+            margin-top:5px;
+            padding-left: 190px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <form>
+        <div><span>숫자</span><span><input type="text" id="num" value=""></div></span></div>
+        <div class="button"><input type="button" id="button" value="클릭" onclick="check()"></div>
+    </form>
+</body>
+</html>

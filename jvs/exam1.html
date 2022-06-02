@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function red() {
+            var content = document.getElementById("show");
+            alert("빨강색으로 변경됩니다")
+            content.style.color = "red";
+        }
+
+        function blue() {
+            var content = document.getElementById("show");
+            alert("파란색으로 변경됩니다")
+            content.style.color = "blue";
+        }
+
+        function green() {
+            var content = document.getElementById("show");
+            alert("초록색으로 변경됩니다")
+            content.style.color = "green";
+        }
+
+
+    </script>
+    <style>
+        #container {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            display: inline-block;
+            left: 45%;
+            top: 45%;
+            border: 1px black solid;
+        }
+        
+        .form {
+            position: absolute;
+            padding-left: 42%;
+            padding-top: 20%;
+        }
+
+        span {
+            margin-left: 5px;
+            margin-right: 5px;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        #show {
+            padding-top: 60px;
+            font-size: 50px;
+        }
+
+        #buttons {
+            padding-top: 40px;
+            padding-left: 6px;
+        }
+
+        #click {
+            padding-left: 80%;
+            padding-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="form">
+        <form name="myform">
+            <div><span>이름</span><span><input type="text" id="name" value=""></span></div>
+            <div id="click"><input type="button" id="button" value="입력" onclick="datashow()"></div>
+        </form>
+    </div>
+    <div id="container">
+        <div id="show">
+        </div>
+        <div id="buttons">
+        </div>
+    </div>
+    <script>
+        function datashow() {
+            var data = document.forms['myform']['name'].value;
+
+            if (data.length == 0) {
+                alert("이름을 입력해주세요!");
+            }
+
+            if (data.length != 0) {
+                document.getElementById('show').innerText = data;
+                document.getElementById('buttons').innerHTML = "<span><input type=button value=빨강 onclick=red()></span><span><input type=button value=파랑 onclick=blue()></span><span><input type=button value=초록 onclick=green()></span>";
+            }
+        }
+    </script>
+</body>
+</html>

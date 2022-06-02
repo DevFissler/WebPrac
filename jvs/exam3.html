@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .button{
+      display: inline-block;
+      width: 150px;
+      height: 70px;
+      text-align: center;
+      line-height: 70px;
+      color: white;
+      background-color: gray;
+      font-size: 25px;
+    }
+    
+  </style>
+  <script>
+    function firstWhite(){
+      let x = document.getElementById('firstBox');
+      let y = document.getElementById('secondBox');
+      let z = document.getElementById('thirdBox');
+      x.style.backgroundColor="white";
+      x.style.color="black";
+      x.style.border="solid";
+      y.style.backgroundColor="gray";
+      y.style.color="white";
+      z.style.backgroundColor="gray";
+      z.style.color="white";
+    }
+    function secondWhite(){
+      let x = document.getElementById('firstBox');
+      let y = document.getElementById('secondBox');
+      let z = document.getElementById('thirdBox');
+      y.style.backgroundColor="white";
+      y.style.color="black";
+      y.style.border="solid";
+      x.style.backgroundColor="gray";
+      x.style.color="white";
+      z.style.backgroundColor="gray";
+      z.style.color="white";
+    }
+    function thirdWhite(){
+      let x = document.getElementById('firstBox');
+      let y = document.getElementById('secondBox');
+      let z = document.getElementById('thirdBox');
+      z.style.backgroundColor="white";
+      z.style.color="black";
+      z.style.border="solid";
+      y.style.backgroundColor="gray";
+      y.style.color="white";
+      x.style.backgroundColor="gray";
+      x.style.color="white";
+    }
+  </script>
+
+  <div id="firstBox" class="button" onclick="firstWhite()">html</div>
+  <div id="secondBox" class="button" onclick="secondWhite()">css</div>
+  <div id="thirdBox" class="button" onclick="thirdWhite()">javascript</div>
+</body>
+</html>

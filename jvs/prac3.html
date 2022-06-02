@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .small-text {
+            font-size: small ;
+        }
+
+        .big-text {
+            font-size: large;
+        }
+
+        #box {
+            background-color: pink;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body onload="init()">
+    <div id="target" class="small-text">Hello</div>
+    <button onclick="changeStyle()">스타일 변경</button>
+    <button onclick="changeFont()">글자 크기 변경</button>
+    <button id="my_button">코드로 이벤트 연결</button>
+    <!-- ul>li.item*4 -->
+    <ul>
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+        <li class="item">4</li>
+    </ul>
+
+    <div id="box" onmouseover="onMouseover()" onmouseleave="onMouseleave()">
+
+
+    </div>
+    <script>
+        function onMouseover(){
+            console.log("마우스 오버");
+        }
+
+        function onMouseleave() {
+            console.log("마우스 리브");
+        }
+
+        function changeStyle(){
+            let $target = document.getElementById('target');
+            $target.style.color = 'red'
+        }
+
+        function changeFont(){
+            let $target = document.getElementById('target');
+            $target.className = 'big-text'
+        }
+
+        function init() {
+            console.log('init!!');
+            let $my_button = document.getElementById('my_button');
+            $my_button.addEventListener('click',function(){console.log('클릭')},)
+        }
+        console.log('body완료!!');
+    </script>
+</body>
+</html>
