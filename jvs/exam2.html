@@ -18,24 +18,49 @@
       background-color: gray;
       font-size: 25px;
     }
-
-    .button:hover{
-        color:black;
-        background-color: white;
-        border: 1px solid black;
-    }
-
-    #container {
-        margin-top:10%;
-        margin-left:33%;
-    }
     
   </style>
-  
-<div id="container">
-  <div class="button" >HTML</div>
-  <div class="button" >CSS</div>
-  <div class="button" >JAVASCRIPT</div>
-</div>
+  <script>
+    function firstWhite(){
+      let x = document.getElementById('firstBox');
+      let y = document.getElementById('secondBox');
+      let z = document.getElementById('thirdBox');
+      x.style.backgroundColor="white";
+      x.style.color="black";
+      x.style.border="solid";
+      y.style.backgroundColor="gray";
+      y.style.color="white";
+      z.style.backgroundColor="gray";
+      z.style.color="white";
+    }
+    function secondWhite(){
+      let x = document.getElementById('firstBox');
+      let y = document.getElementById('secondBox');
+      let z = document.getElementById('thirdBox');
+      y.style.backgroundColor="white";
+      y.style.color="black";
+      y.style.border="solid";
+      x.style.backgroundColor="gray";
+      x.style.color="white";
+      z.style.backgroundColor="gray";
+      z.style.color="white";
+    }
+    function thirdWhite(){
+      let x = document.getElementById('firstBox');
+      let y = document.getElementById('secondBox');
+      let z = document.getElementById('thirdBox');
+      z.style.backgroundColor="white";
+      z.style.color="black";
+      z.style.border="solid";
+      y.style.backgroundColor="gray";
+      y.style.color="white";
+      x.style.backgroundColor="gray";
+      x.style.color="white";
+    }
+  </script>
+
+  <div id="firstBox" class="button" onclick="firstWhite()">html</div>
+  <div id="secondBox" class="button" onclick="secondWhite()">css</div>
+  <div id="thirdBox" class="button" onclick="thirdWhite()">javascript</div>
 </body>
 </html>
