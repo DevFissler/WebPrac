@@ -17,6 +17,11 @@
             border:1px solid black;
             border-width: 1;
         }
+
+        table {
+            width:600px;
+            text-align: center;
+        }
     </style>
     <table border="1">
         <tr>
@@ -25,9 +30,9 @@
             <th>글쓴시간</th>
         </tr>
         <tr>
-            <td><input type="checkbox" name="chk"></td>
+            <td width="70px"><input type="checkbox" name="chk"></td>
             <td>1111</td>
-            <td>11:11:11</td>
+            <td width="130px">11:11:11</td>
         </tr>
         <tr>
             <td><input type="checkbox" name="chk"></td>
@@ -59,15 +64,50 @@
         <input type="button" id="log_button" value="로그">
     </div>
     <script>
-        //$('#log_button').val(); 밸류 값 읽기 
+    //$('#log_button').val(); 밸류 값 읽기 
+    // $('#log_button').val();  // value 값 읽기
+    // $('#log_button').val('어쩌구');  // value 에 값 쓰기
 
-        $('#log_button').click(function(){
+    $('input:checkbox[name=all]').click(function(){
 
-            let $checkBoxes = $('input:Checkbox[name=chk]');
-            console.log($checkBoxes.length);
+        if($('input:checkbox[name=all]:checked').length !=0){
 
-            console.log($('input:checkbox[name=chk]:checked').length);
-        })
+            $('input:checkbox[name=chk]:checkbox').prop('checked',true);
+        
+        }  
+
+        if($('input:checkbox[name=all]:checked').length ==0){
+
+            $('input:checkbox[name=chk]:checkbox').prop('checked',false);
+
+        }  
+
+    })
+        
+
+    $('#log_button').click(function () {
+
+      // 체크된 것이 있는지?
+      if ($('input:checkbox[name=chk]:checked').length == 0) {
+        alert("체크된 항목 없음");
+      }
+
+      // 내부 순환
+      let checkedSize = 0;
+      $('input[name=chk]:checkbox').each(function () {
+        
+        if($(this).is(':checked')){
+
+            let tr = $(this).parent().parent();
+            let td = tr.children();
+
+            let title = td.eq(1).text();
+            console.log(title);
+        }
+      });
+
+    });
+
     </script>
 </body>
 </html>
