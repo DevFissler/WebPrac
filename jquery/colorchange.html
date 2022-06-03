@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous">
+    </script>
+    <style>
+        #container {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            display: inline-block;
+            left: 45%;
+            top: 45%;
+            border: 1px black solid;
+        }
+        
+        .form {
+            position: absolute;
+            padding-left: 42%;
+            padding-top: 20%;
+        }
+
+        span {
+            margin-left: 5px;
+            margin-right: 5px;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        #show {
+            padding-top: 60px;
+            padding-left:10px;
+            padding-right:10px;
+            font-size: 50px;
+        }
+
+        #buttons {
+            padding-top: 40px;
+            padding-left: 6px;
+            
+        }
+
+        #click {
+            padding-left: 80%;
+            padding-top: 10px;
+        }
+
+        .invisible {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        $(function(){
+        
+        $('#inbutton').click(function () {
+            let data = $('#name').val();
+
+            if (data.length == 0) {
+                alert('이름을 입력해주세요!');
+            }
+
+            if (data.length != 0) {
+                $('#show').text(data);
+                $('#buttons').attr('class','visible');
+            }
+        })
+        
+
+        $('#redB').click(function() {    
+            alert("빨강색으로 변경됩니다");
+            $('#show').css('color','red');
+        })
+    
+        $('#blueB').click(function() {
+            alert('파랑색으로 변경됩니다');
+            $('#show').css('color','blue');
+        })
+
+        $('#greenB').click(function() {
+            alert("초록색으로 변경됩니다");
+            $('#show').css('color','green');
+        })     
+    })
+
+
+    </script>
+    <div class="form">
+        <form>
+            <div><span>이름</span><span><input type="text" id="name" value=""></span></div>
+            <div id="click"><input type="button" id="inbutton" value="입력"></div> 
+        </form>
+    </div>
+    <div id="container">
+        <div id="show">
+        </div>
+        <div id="buttons" class="invisible">
+            <span><input type="button" id="redB" name="red" value="빨강"></span><span><input type="button" id="blueB" name="blue" value="파랑"></span><span><input type="button" id="greenB" name="green" value="초록"></span>
+        </div>
+    </div>
+</body>
+</html>

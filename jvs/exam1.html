@@ -27,6 +27,18 @@
             content.style.color = "green";
         }
 
+        function datashow() {
+            var data = document.forms['myform']['name'].value;
+
+            if (data.length == 0) {
+                alert("이름을 입력해주세요!");
+            }
+
+            if (data.length != 0) {
+                document.getElementById('show').innerText = data;
+                document.getElementById('buttons').innerHTML = "<span><input type=button value=빨강 onclick=red()></span><span><input type=button value=파랑 onclick=blue()></span><span><input type=button value=초록 onclick=green()></span>";
+            }
+        }
 
     </script>
     <style>
@@ -84,19 +96,5 @@
         <div id="buttons">
         </div>
     </div>
-    <script>
-        function datashow() {
-            var data = document.forms['myform']['name'].value;
-
-            if (data.length == 0) {
-                alert("이름을 입력해주세요!");
-            }
-
-            if (data.length != 0) {
-                document.getElementById('show').innerText = data;
-                document.getElementById('buttons').innerHTML = "<span><input type=button value=빨강 onclick=red()></span><span><input type=button value=파랑 onclick=blue()></span><span><input type=button value=초록 onclick=green()></span>";
-            }
-        }
-    </script>
 </body>
 </html>

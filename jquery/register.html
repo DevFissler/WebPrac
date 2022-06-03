@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>실습 7</title>
+        <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous">
+        </script>
+    </head>
+    
+    <body>    
+        <form class="regiForm">
+            <table border="0" cellspacing="2">           
+                <tr>
+                    <td>아이디</td>
+                    <td colspan="2">
+                        <input type="email" id="UserID" name="id" style="width:300px" placeholder="아이디">
+                    </td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td colspan="2">
+                        <input type="password" id="UserPW" name="pw" style="width:300px" placeholder="비밀번호">
+                    </td>
+                </tr>
+                <tr>
+                    <td>성별</td>
+                    <td colspan="2">
+                        <input type="checkbox" id="genChk" value="남성">남성
+                        <input type="checkbox" id="genChk" value="여성">여성
+                    </td>
+                </tr>
+                <tr>
+                    <td>직업</td>
+                    <td colspan="2">
+                        <select id="job">
+                        <option value=""></option>
+                        <option value="singer">가수</option>
+                        <option value="model">모델</option>
+                        <option value="actor">배우</option>
+                        <option value="dancer">댄서</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td>취미</td>
+                    <td colspan="2">
+                        <input type="checkbox" id="hobChk" value="게임">게임
+                        <input type="checkbox" id="hobChk" value="등산">등산
+                        <input type="checkbox" id="hobChk" value="낚시">낚시
+                        <br>
+                        <input type="checkbox" id="hobChk" value="수영">수영
+                        <input type="checkbox" id="hobChk" value="독서">독서
+                        <input type="checkbox" id="hobChk" value="사냥">사냥
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" colspan="2"><input type="submit" id="chkButton" value="회원가입"></td>
+                    <td align="right"><input type="reset" value="초기화"></td>
+                </tr>
+            </table>
+        </form>
+        <script>
+            $(function() {
+                
+                $('#chkButton').click(function(){
+                
+                    if($('#UserID').val().length !=0){
+
+                        if($('input:checkbox[id=genChk]:checked').length !=0){
+                                
+                            if($('#job').val() !="" ){
+                                    
+                                if($('input:checkbox[id=hobChk]:checked').length >=3){
+                                        
+                                    if($('#UserPW').val().length >=5 ){
+                                            
+                                        confirm("가입을 완료하시겠습니까?");
+                                        
+                                    } else {          
+                                        alert("비밀번호를 5자 이상 입력해주세요!");
+                                    }
+                                } else {   
+                                    alert("취미를 3개이상 선택해주세요!");
+                                }
+                            } else {
+                                    alert("직업을 선택해주세요!");
+                            }
+                        } else {   
+                            alert("성별을 체크해주세요!");
+                        }
+                    } else {
+                        alert("아이디를 입력해주세요!");
+                    }
+                })
+            });
+        </script>
+    </body>
+</html>

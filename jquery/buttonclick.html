@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    div {
+      display: inline-block;
+      border: 1;
+      width: 150px;
+      height: 70px;
+      text-align: center;
+      border: 1px solid black;
+    }
+
+    .box {
+      background-color: darkgray;
+      color: white;
+    }
+
+    .selected-box {
+      background-color: white;
+      color: black;
+    }
+  </style>
+
+
+  <div class="box" onclick="changeStyle(this)">HTML</div>
+  <div class="box" onclick="changeStyle(this)">CSS</div>
+  <div class="box" onclick="changeStyle(this)">JAVASCRIPT</div>
+
+  <script>
+    function changeStyle($el) {
+      console.log($el);
+
+      $divs = document.querySelectorAll('div');
+        //어떤 버튼 누르면 다른 버튼은 다시 원래 상태로 돌아가야하므로 반복문
+      for (let i = 0; i < $divs.length; i++) {
+        //삼항 연산자  : divs[i] 가 $el 과 같으면(true) > selected-box /  다르면(false) > box
+        $divs[i].className = $divs[i] === $el ? 'selected-box' : 'box';
+      }
+    }
+
+  </script>
+</body>
+
+</html>

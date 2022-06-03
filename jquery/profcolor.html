@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <style>
+    .red {
+      color: red;
+    }
+
+    .blue {
+      color: blue;
+    }
+
+    .green {
+      color: green;
+    }
+  </style>
+
+  <style>
+    .center {
+      text-align: center;
+    }
+
+    .invisible {
+      display: none;
+    }
+
+    .visible {
+      display: block;
+    }
+  </style>
+
+  <div class="center">
+    <h1 id="text"></h1>
+    <div id="buttons" class="invisible">
+      <button onclick="changeColor('red')">빨강</button>
+      <button onclick="changeColor('blue')">파랑</button>
+      <button onclick="changeColor('green')">초록</button>
+    </div>
+  </div>
+
+  <script>
+    let text = prompt('텍스트 값을 입력해 주세요');
+    if (text === '') {
+      text = prompt('입력해주세요');
+    }
+
+    // top level 변수
+    let $text = $('#text');
+    $text.text(text);
+
+    let $buttons = $('#buttons');
+    $buttons.attr('class', 'visible');
+
+    function changeColor(color) {
+      alert(`${color}색으로 변경됩니다.`);
+      // let $text = document.getElementById('text');
+      $text.css('color', color);
+    }
+
+  </script>
+
+</body>
+
+</html>

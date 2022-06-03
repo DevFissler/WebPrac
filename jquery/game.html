@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <style>
+    #container {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      left: 50px;
+      top: 50px;
+      border: 1px black solid;
+    }
+
+    #character {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      border: 1px black solid;
+    }
+  </style>
+
+  <div id="container">
+    <img id="character" src="oMush.gif" alt="character">
+  </div>
+
+  <script>
+    let character = $('#character');
+
+    const GAME_WIDTH = 600;
+    const GAME_HEIGHT = 600;
+
+    const MOVE = 25;
+    const CHARACTER_HEIGHT = 50;
+    const CHARACTER_WIDTH = 50;
+
+    $('body').keydown(function (event) {
+      let top = Number(character.css('top').replace('px', ''));
+      let bottom = top + CHARACTER_HEIGHT;
+      let left = Number(character.css('left').replace('px', ''));
+      let right = left + CHARACTER_WIDTH;
+
+      switch (event.key) {
+        case 'ArrowUp':
+          if (top - MOVE < 0) {
+            return;
+          }
+          character.css({ top: '-=25px' });
+          break;
+        case 'ArrowDown':
+          if (bottom + MOVE > GAME_HEIGHT) {
+            character.css({ transform: scaleY(-1) });
+            return;
+          }
+          character.css({ top: '+=25px' });
+          break;
+        case 'ArrowLeft':
+          if (left - MOVE < 0) {
+            return;
+          }
+          character.css({ left: '-=25px' });
+          break;
+        case 'ArrowRight':
+          if (right + MOVE > GAME_WIDTH) {
+            return;
+          }
+          character.css({ left: '+=25px' });
+          break;
+      }
+    });
+
+  </script>
+</body>
+
+</html>
