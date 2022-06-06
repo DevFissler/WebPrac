@@ -25,7 +25,28 @@
       position: relative;
       width: 50px;
       height: 50px;
-      border: 1px black solid;
+      border: 1px white solid;
+    }
+
+    .character_x {
+
+      transform: scaleX(1);
+    }
+
+    .character_y {
+
+      transform: scaleY(1);
+    }
+
+
+    .character_revY {
+
+      transform: scaleY(-1);
+    }
+
+    .character_revX {
+
+      transform: scaleX(-1);
     }
   </style>
 
@@ -52,25 +73,28 @@
       switch (event.key) {
         case 'ArrowUp':
           if (top - MOVE < 0) {
+            $('#character').attr('class','character_y');
             return;
           }
           character.css({ top: '-=25px' });
           break;
         case 'ArrowDown':
           if (bottom + MOVE > GAME_HEIGHT) {
-            character.css({ transform: scaleY(-1) });
+            $('#character').attr('class','character_revY');
             return;
           }
           character.css({ top: '+=25px' });
           break;
         case 'ArrowLeft':
           if (left - MOVE < 0) {
+            $('#character').attr('class','character_x');
             return;
           }
           character.css({ left: '-=25px' });
           break;
         case 'ArrowRight':
           if (right + MOVE > GAME_WIDTH) {
+            $('#character').attr('class','character_revX');
             return;
           }
           character.css({ left: '+=25px' });

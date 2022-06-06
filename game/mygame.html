@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>범죄도시 3</title>
+    <link rel="stylesheet" href="mygamestyle.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <img id="background" src="assets/back2.jpg" alt="background" style="opacity: 0.8;">
+        <img id="ma" src="assets/hitMA.gif" alt="ma">
+        <img id="gang" src="assets/gangel.png" alt="gang">
+        <img id="zhang" src="assets/zhang.png" alt="zhang">
+        <img id="isu" src="assets/isu.png" alt="isu">
+        <img id="capt" src="assets/capt.png" alt="capt">
+        <img id="punch" src="assets/punch3.png" alt="punch">
+        <img id="bomb" src="assets/boom.gif" alt="bomb" > 
+
+        <div class="start">
+            <img src="assets/front.jpg" alt="" id="startImg">
+            <button id="start_button" class="game_start_button">GAME START</button>
+        </div>
+
+        <div id="scoreboard">
+            <img src="assets/handcuff.png" alt="score" id="handcuff">
+        </div>
+        <div id="totalscore"></div>
+
+        <div class="gameover">GAME OVER<br />
+            <button id="restart_button" class="game_start_button">Restart</button>
+            <img src="assets/shyMA.gif" alt="" id="endImg">
+        </div>
+
+        <script src="mygame.js"></script>
+    </div>
+    <div id="manual">
+        <div style="text-align: center; margin-top: 10px;">
+            조작: 점프 = Space / 공격 = ctrl
+        </div>
+        <div style="margin-top:20px">
+            <span style="margin-left: 80px"><img src="assets/gangel.png" alt="gang" width=50px height=50px> : 강해상</span>
+            <span><img src="assets/zhang.png" alt="gang" width=50px height=50px> : 장첸</span>
+            <span><img src="assets/isu.png" alt="gang" width=50px height=50px> : 장이수</span>
+            <span><img src="assets/capt.png" alt="gang" width=50px height=50px> : 반장님</span>
+        </div>
+        <div style="text-align: center; margin-top:20px;">
+            날아오는 캐릭터를 피하면 50점<br>
+            장첸 혹은 강해상을 때리면 200점<br>
+            날아오는 캐릭터를 못 피하거나 장이수 혹은 반장님을 때리면 게임 오버
+        </div>
+    </div>
+</body>
+</html>
