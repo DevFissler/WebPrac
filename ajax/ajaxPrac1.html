@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ajax = 화면 전체 갱신 않고 일부 부분 업데이트 하는 느낌
+        function loadDoc() {
+            //1단계 xmlHttpRequest 객체 생성
+            let xhttp = new XMLHttpRequest();
+            //2단계 응답 왔을 때 call back 함수
+            xhttp.onreadystatechange = function() {
+                //3단계 응답이 오면 
+                //readystate 0~4 (4= 정상완료)
+                //status=http상태코드 
+                //200= ok상태 , 
+                //404= 파일을 못 찾았다(경로 오류) but 응답이 왔으므로 정상 완료
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo").innerHTML = this.responseText;
+                }
+            };
+            //4단계 통신 방식, 대상 설정(get(읽기) , post(쓰기), patch...),비동기로 할거냐(true)
+            xhttp.open("GET", "ajax_info.txt", true);
+            xhttp.send();
+        }
+    </script> 
+    <div id="demo"></div>
+    <button onclick="loadDoc()">get Data</button>
+</body>
+</html>
