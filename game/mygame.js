@@ -40,7 +40,7 @@ function moveGang() {
     }
     console.log(charchoice);
     gang.show();
-    let gangSpeed = (Math.floor((Math.random()*2)+1))  * 1000;
+    let gangSpeed = (Math.floor((Math.random()*2)+1))  * 1200;
     gang.animate({ right: "120%" }, gangSpeed, function () {
         gang.css({ right: "-100px" });
 
