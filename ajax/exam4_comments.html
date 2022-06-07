@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <script>
+    $(function () {
+      const queryString = window.location.search;   // url 뒤 ?부터 (ex: '?id=1')
+      const urlParams = new URLSearchParams(queryString);
+      const id = urlParams.get('id');
+
+      console.log(id);
+
+      loadData(id);
+    });
+
+    function loadData(id) {
+      fetch(`https://jsonplaceholder.typicode.com/comments?postId=${id}`)
+        .then(response => response.json())
+        .then(jsonArray => {
+          // for (let i = 0; i < jsonArray.length; i++)
+          let $list = $('#list');
+          jsonArray.forEach((data, i) => {
+            $list.append(`<li>${data.body}</li>`);
+          })
+          console.log(jsonArray);
+        });
+    } 
+  </script>
+  <h1>댓글</h1>
+  <ul id="list">
+  </ul>
+</body>
+
+</html>

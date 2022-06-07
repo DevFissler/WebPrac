@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <style>
+    body {
+      background-color: beige;
+      color: azure;
+      margin: 10px;
+    }
+
+    img {
+      display: inline-block;
+      width: 40%;
+      height: 850px;
+    }
+
+    #info {
+      font-weight: 900;
+      margin: 50px;
+      border-radius: 30px;
+      background: rgb(65, 65, 129);
+      padding: 20px;
+    }
+
+    #infoBox {
+      position: absolute;
+      padding-top: 10px;
+    }
+
+    #cgv {
+      text-align: center;
+      font-size:  600%;
+      font-weight: bolder;
+      color: red;
+      margin-bottom: 50px;
+      height: 100px;
+      padding-bottom: 30px;
+    }
+  </style>
+
+  <script>
+    $(function () {
+      const queryString = window.location.search;
+      const parameters = new URLSearchParams(queryString);
+      const id = parameters.get("id");
+
+      fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=a64533e7ece6c72731da47c9c8bc691f&language=ko-KR&page=1`)
+        .then(response => response.json())
+        .then(movie => {
+          let detail = $("#detail")
+          detail.append(`<img src="https://image.tmdb.org/t/p/w500${movie.poster_path}"></img>
+          <span id="infoBox">
+            <p id="info"><b>한국명</b>&nbsp &nbsp ${movie.title}</p>
+            <p id="info"><b>영문명</b>&nbsp &nbsp ${movie.original_title}</p>
+            <p id="info"><b>개봉일</b>&nbsp &nbsp ${movie.release_date}</p>
+            <p id="info"><b>평  점</b>&nbsp &nbsp &nbsp&nbsp ${movie.vote_average}</p>
+            <p id="info"><b>인기도</b>&nbsp &nbsp ${movie.popularity}</p>
+            <p id="info"><b>줄거리</b>&nbsp &nbsp<br><br> ${movie.overview}</p>
+          </span>`)
+        })
+    })
+
+
+  </script>
+  <div id="cgv">CGV</div>
+  <div id="detail"></div>
+</body>
+
+</html>
