@@ -11,6 +11,7 @@
   <style>
     body{
       background-color: beige;
+      
     }
 
     #container {
@@ -20,7 +21,7 @@
     }
 
     .card {
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
       transition: 0.3s;
       margin-bottom: 10px;
       width: 320px;
@@ -28,11 +29,14 @@
       padding-top: 20px;
       padding-left: 20px;
       background-color: rgb(65, 65, 129);
+      color: white;
       border-radius: 20px;
     }
 
     .card:hover {
-      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+      background-color: beige;
+      color: rgb(65, 65, 129);
     }
 
     .title {
@@ -41,6 +45,11 @@
       text-align: center;
       color: white;
       height: 100px;
+      transition: 0.3s;
+    }
+
+    .title:hover {
+      color: rgb(65, 65, 129);
     }
 
     #cgv {
@@ -68,14 +77,14 @@
         .then(response => response.json())
         .then(jsonArray => {
           let lists = jsonArray.results;
-          lists.forEach((list) => {
-            $('#container').append(`<div class="card"><img src="https://image.tmdb.org/t/p/w500/${list.poster_path}" onclick="showdetail(${list.id})" style=width:300px;height:420px;><div class="title"><h4><b>${list.title}</b></h4></div></div>`);
+          lists.forEach((lists) => {
+            $('#container').append(`<div class="card"><img src="https://image.tmdb.org/t/p/w500/${lists.poster_path}" onclick="showdetail(${lists.id})" style=width:300px;height:420px;><div class="title" onclick="showdetail(${lists.id})"><h4><b>${lists.title}</b></h4></div></div>`);
           })
           
         });
     } 
   </script>
-  <div id="cgv">CGV</div>
+  <div id="cgv"><img src="cgv.png" style="width:200px; height:100px;"></div>
   <span id="container">
   </span>
 

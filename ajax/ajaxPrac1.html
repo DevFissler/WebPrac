@@ -17,7 +17,7 @@
                 //3단계 응답이 오면 
                 //readystate 0~4 (4= 정상완료)
                 //status=http상태코드 
-                //200= ok상태 , 
+                //200= ok상태 
                 //404= 파일을 못 찾았다(경로 오류) but 응답이 왔으므로 정상 완료
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("demo").innerHTML = this.responseText;
